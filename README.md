@@ -1,5 +1,5 @@
 # Eloquent Javascript, 3rd Edition: A modern Introduction to programming
-An overview, with solutions and explanation of exercises in chapters four to six of the ebook Eloquent Javascript, 3rd Edition by Marijn Haverbeke
+An overview, with solutions and explanation of exercises in chapters four to six of the ebook [Eloquent Javascript, 3rd Edition](https://eloquentjavascript.net/Eloquent_JavaScript.pdf) by Marijn Haverbeke
 
 ## Overview
 ### Chapter Four: Data Structures: Objects and Arrays
@@ -224,7 +224,7 @@ You can use the `instanceOf` operator to check if an object was derived from a s
 
 ## Exercises
 ### Chapter Four: Data Structures: Objects and Arrays
-* 4.1 Sum of a Range
+* 4.1 [Sum of a Range](https://github.com/EmmanuelOkorieC/eloquent_js_third_edition-_4-6/blob/main/chapter%204%20exercises/sumOfRange.js)
 
    For this excercise, i was expected to write two functions, `range` and `sum`. `range` takes two arguments, `start` and `end` and returns an array containing all numbers from `start` up to `end`(inclusive). `sum` takes an array of numbers and returns the sum of these numbers.
    
@@ -275,7 +275,7 @@ You can use the `instanceOf` operator to check if an object was derived from a s
 
     console.log(sum(range(1, 10, 1))) //outputs 55
    ```
-* 4.2 Reversing An Array
+* 4.2 [Reversing An Array](https://github.com/EmmanuelOkorieC/eloquent_js_third_edition-_4-6/blob/main/chapter%204%20exercises/reverseArray.js)
 
    For this exercise, i had to write two functions `reverseArray` and `reverseArrayInPlace`. They would work like the array method `reverse` that changes my array by inverting the order in which my elements appear. `reverseArray` takes my array as argument and produces a new array that has the same elements in the inverse order. `reverseArrayInPlace` would do the same thing but by modifying the array i passed in as an argument.
    
@@ -313,7 +313,7 @@ You can use the `instanceOf` operator to check if an object was derived from a s
 
    console.log(reverseArrayInPlace([3, 8, 7, 4, 5])) //outputs [5, 4, 7, 8, 3]
    ```
-* 4.3 A List
+* 4.3 [A List](https://github.com/EmmanuelOkorieC/eloquent_js_third_edition-_4-6/blob/main/chapter%204%20exercises/list.js)
 
    For this exercise, i was tasked to write a function `arrayToList` that takes an array as argument and returns a *List*. A *list* is a nested set of objects, with the first holding a reference to the second, the second to the third and so on. After getting this to work, i also have to write a `listToArray` function that produces an array from a list, a `prepend` function that takes an element and a list and returns a new list that adds the element to the input list, and finally a `nth` function that takes a list and number as argument and returns the element at the given position in the list.
    
@@ -350,7 +350,7 @@ You can use the `instanceOf` operator to check if an object was derived from a s
        return array[number]
     }
    ```
-* 4.4 Deep Comparison
+* 4.4 [Deep Comparison](https://github.com/EmmanuelOkorieC/eloquent_js_third_edition-_4-6/blob/main/chapter%204%20exercises/deepComparison.js)
 
    For this exercise, i wrote a function `deepEqual` that takes two values and returns true only if they are the same value, or objects with the same properties
    
@@ -408,7 +408,7 @@ You can use the `instanceOf` operator to check if an object was derived from a s
    }
    ```
 ### Chapter Five: Higher Order Functions
-* 5.1 Flattening
+* 5.1 [Flattening](https://github.com/EmmanuelOkorieC/eloquent_js_third_edition-_4-6/blob/main/chapter%205%20exercises/flattening.js)
 
    In this exercise, I was expected to "flatten" an array of arrays into a single array using the array methods `reduce` and `concat`. Pretty straight forward exercise.
    ```javascript
@@ -418,7 +418,7 @@ You can use the `instanceOf` operator to check if an object was derived from a s
    ```
     My `reduce` method automatically takes the first array in `array` as the start value since i did not indicate one
     
-* 5.2 Your Own Loop
+* 5.2 [Your Own Loop](https://github.com/EmmanuelOkorieC/eloquent_js_third_edition-_4-6/blob/main/chapter%205%20exercises/yourOwnLoop.js)
 
    For this exercise, i wrote a higher order function `loop` that provides something like a `for` loop statement. It takes a `value`, `test` function, `update` function and a `body` function. Based of the author's suggestion, i used a normal `for` loop to define this. 
    ```javascript
@@ -432,7 +432,7 @@ You can use the `instanceOf` operator to check if an object was derived from a s
    
    I stored my value as `val` in my for loop. `test` function takes `val` as argument and checks if my iteration should end. `update` function takes `val` as argument and returns an updated value that i reassign to `val` for my next iteration. `body` function is applied to all values  `val` returns in the loop
    
-* 5.3 Everything
+* 5.3 [Everything](https://github.com/EmmanuelOkorieC/eloquent_js_third_edition-_4-6/blob/main/chapter%205%20exercises/everything.js)
 
   The array method `every` works almost like the `some` method except it returns `true` when my test function is `true` for every element in the array. In this exercise, i implemented `every` as a function and wrote two versions of it. one using a loop and one using the `some` method. For the first version i defined my `every` function that takes an array and a test function as arguments. I looped through each element of my array and ran my test function on each of them. If my test function returns `false` for any element in the array, my `every` function returns `false`. If it doesn't, then it simply exits the loop and returns `true`
   
@@ -450,9 +450,9 @@ You can use the `instanceOf` operator to check if an object was derived from a s
       return !array.some(val => !test(val))
      }
   ```
-* 5.4 Dominant writing Direction
+* 5.4 [Dominant writing Direction](https://github.com/EmmanuelOkorieC/eloquent_js_third_edition-_4-6/blob/main/chapter%205%20exercises/dominantDirection.js)
 
-  To understand this exercise, you need to take a look at the data set the author worked with throughout this chapter. It contains pieces of information about the 140 scripts defined in Unicode (name, the direction in which it is written, Whether it is still in use, Unicode ranges assigned to it and a link to more information). This exercise required me to use helper functions `characterScript` and `countBy` already defined by the author in this chapter to write a function that computes the dominant writing direction in a string of text. `characterScript` takes a character code as argument and returns a corresponding script (if any). `countBy` takes an array and a function (that computes a group name for a given element) as arguments, and returns an array of objects, each of which names a group and tells you the number of elements found in that group. We will use this `countBy` function to count characters with the same direction. I started by doing just that, i passed my text and function to `countBy`. This function takes each character of my text, passes it's character code as argument to `characterScript` and returns the direction property of the script it returns or none if it doesn't find any. Then i filtered the group my `countBy` function returns removing the group with name property of "none" and assigned this result to a binding `script`. Then i proceeded to define three bindings. `directions` is an array of the three main directions defined in the data set. `num` holds `-Infinity` that i use to compare and reassign values and `dominant` is undefined. I looped through `directions` using each element to filter out groups in `script` with the same name and reducing the count property to give me a value. This value returns 0 when there is no matching group in my script. I assigned this value to a binding `total` and for each iteration of `directions` i check if `total` is greater than `num`. If this returns true, i reassign `num` and assign the direction with that bigger value to my `dominant` binding and proceed to the next iteration. After it is done, i return my `dominant` binding
+  To understand this exercise, you need to take a look at the [data set](https://eloquentjavascript.net/code/scripts.js) the author worked with throughout this chapter. It contains pieces of information about the 140 scripts defined in Unicode (name, the direction in which it is written, Whether it is still in use, Unicode ranges assigned to it and a link to more information). This exercise required me to use helper functions `characterScript` and `countBy` already defined by the author in this chapter to write a function that computes the dominant writing direction in a string of text. `characterScript` takes a character code as argument and returns a corresponding script (if any). `countBy` takes an array and a function (that computes a group name for a given element) as arguments, and returns an array of objects, each of which names a group and tells you the number of elements found in that group. We will use this `countBy` function to count characters with the same direction. I started by doing just that, i passed my text and function to `countBy`. This function takes each character of my text, passes it's character code as argument to `characterScript` and returns the direction property of the script it returns or none if it doesn't find any. Then i filtered the group my `countBy` function returns removing the group with name property of "none" and assigned this result to a binding `script`. Then i proceeded to define three bindings. `directions` is an array of the three main directions defined in the data set. `num` holds `-Infinity` that i use to compare and reassign values and `dominant` is undefined. I looped through `directions` using each element to filter out groups in `script` with the same name and reducing the count property to give me a value. This value returns 0 when there is no matching group in my script. I assigned this value to a binding `total` and for each iteration of `directions` i check if `total` is greater than `num`. If this returns true, i reassign `num` and assign the direction with that bigger value to my `dominant` binding and proceed to the next iteration. After it is done, i return my `dominant` binding
    ```javascript
     function characterScript(code) {
      for (let script of SCRIPTS) {
@@ -503,7 +503,7 @@ You can use the `instanceOf` operator to check if an object was derived from a s
    ```
    
 ### Chapter Six: The Secret Life of Objects
-* 6.1 A Vector type
+* 6.1 [A Vector type](https://github.com/EmmanuelOkorieC/eloquent_js_third_edition-_4-6/blob/main/chapter%206%20exercises/vectorType.js)
 
    For this exercise, i wrote a class `Vec` that represents a vector in a 2D space. it takes `x` and `y` as parameters and stores them as properties with the same name. It has two methods `plus` and `minus` that takes another vector as argument and returns a new vector with the the sum or difference of the two vectors' `x` and `y` values. It also has a getter property `length` that computes the length of the vector from the origin (0, 0). This exercise was pretty straight forward. To get the length from the origin, i used *pythagoras theorem*, adding the square of differences between the `x` values and square of differences between the `y` values and finding it's square root. Then i rounded it to give me a whole number using `Math.round`
    ```javascript
@@ -527,7 +527,7 @@ You can use the `instanceOf` operator to check if an object was derived from a s
    }
    ```
 
-* 6.2 Groups
+* 6.2 [Groups](https://github.com/EmmanuelOkorieC/eloquent_js_third_edition-_4-6/blob/main/chapter%206%20exercises/groups.js)
 
    For this exercise, i wrote a class `Group` that models the data structure `Set`. A `Set` holds a collection of values but unlike `Map` does not associate this values with other values. A value can be a part of a set only once (adding it again does not have any effect). This class `Group` much like `Set` would have `add`, `delete` and `has` methods. It's constructor creates an empty group. `add` adds a value to the group but only if it's not a member. `delete` removes a value from the group if it was a member and `has` returns a boolean indicating if the value passed in as argument is a member of the group. This class would also have a static method `from` that takes an iterable object as argument and creates a group that contains all values produced by iterating over it. 
    
@@ -563,7 +563,7 @@ You can use the `instanceOf` operator to check if an object was derived from a s
   }
    ```
    
-* 6.3 Iterable Groups
+* 6.3 [Iterable Groups](https://github.com/EmmanuelOkorieC/eloquent_js_third_edition-_4-6/blob/main/chapter%206%20exercises/iterableGroups.js)
 
    For this exercise, i made the class `Group` i defined in the previous exercise iterable. Could have been pretty straightforward since i used an array to define my group (the `members` property). All i would do is call it's `Symbol.iterator` function in the `Symbol.iterator` i define for my class `Group`.
    ```javascript
@@ -571,7 +571,7 @@ You can use the `instanceOf` operator to check if an object was derived from a s
      return this.members[Symbol.iterator]()
   }
    ```
-   But the author advised against that so i had to define my own *iterator* object. I defined it directly in my class's `Symbol.iterator` functiion at first
+   But the author advised against that so i had to define my own *iterator* object. I defined it directly in my class's `Symbol.iterator` function at first
    ```javascript
    Group.prototype[Symbol.iterator] = function() {
    let x = -1
@@ -608,7 +608,7 @@ You can use the `instanceOf` operator to check if an object was derived from a s
    ```
    This followed the same pattern as in my last approach but gave me a little level of abstraction
    
-* 6.4 Borrowing a Method
+* 6.4 [Borrowing a Method](https://github.com/EmmanuelOkorieC/eloquent_js_third_edition-_4-6/blob/main/chapter%206%20exercises/borrowingMethod.js)
 
    For this exercise, i had to think of a way to call `hasOwnProperty` on an object that has it's own property by that name. 
    
