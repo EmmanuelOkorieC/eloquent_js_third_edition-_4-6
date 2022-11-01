@@ -226,9 +226,9 @@ You can use the `instanceOf` operator to check if an object was derived from a s
 ### Chapter Four: Data Structures: Objects and Arrays
 * 4.1 [Sum of a Range](https://github.com/EmmanuelOkorieC/eloquent_js_third_edition-_4-6/blob/main/chapter%204%20exercises/sumOfRange.js)
 
-   For this excercise, i was expected to write two functions, `range` and `sum`. `range` takes two arguments, `start` and `end` and returns an array containing all numbers from `start` up to `end`(inclusive). `sum` takes an array of numbers and returns the sum of these numbers.
+   For this excercise, i wrote two functions, `range` and `sum`. `range` takes two arguments, `start` and `end` and returns an array containing all numbers from `start` up to `end`(inclusive). `sum` takes an array of numbers and returns the sum of these numbers.
    
-   To get this working i defined a binding `array` in my `range` function and assigned an empty array object to it. Then i wrote a `for` loop and defined my binding `i` in it. `i` takes `start` as it's start value, `end` as it's end value in my end condition, and increments by 1. in the loop, i added all values `i` returned into my empty array using the array method `push` and after the loop, i returned `array`
+   To get this working i defined a binding `array` in the `range` function and assigned an empty array object to it. Then i wrote a `for` loop and defined  a binding `i` in it. `i` takes `start` as it's start value, `end` as it's end value in the end condition, and increments by 1. in the loop, I added all values `i` returned into the empty array using the array method `push` and after the loop, i returned `array`
    ```javascript
    function range(start, end) {
       let array = []
@@ -238,7 +238,7 @@ You can use the `instanceOf` operator to check if an object was derived from a s
       return array
    }
    ```
-   For my `sum` function, i defined a binding `count` and assigned the value `0` to it. Then i looped through all elements of the array i passed in as an argument, adding each element to `count` everytime it iterates and reassigning it to my binding `count`. Then after the loop, i returned `count` 
+   For the `sum` function, i defined a binding `count` and assigned the value `0` to it. Then i looped through all elements of the array i passed in as  argument, adding each element to `count` everytime it iterates and reassigning it to the binding `count`. Then after the loop, i returned `count` 
    ```javascript
      function sum(array) {
        let count = 0
@@ -248,7 +248,7 @@ You can use the `instanceOf` operator to check if an object was derived from a s
        return count
      }
    ```
-   As a bonus i was tasked to modify my `range` function to take an optional third argument `step`. This `step` would be the incremental value for my range of numbers. If it is not given, the default value would be 1. I was also tasked to make it work for a negative `step` when the start value is greater than the end value. This negative `step` by default would be -1. I started by writing some exceptions, The first for when my `start` value is greater than my `end` value but my step is positive `range(5, 1, 2)`. The second for when my `end` value is greater than my `start` value but my step is negative `range(1, 10 -1)`. In both cases my function returns a string telling you it can't compute. Else it progresses to the function itself. For the `for` loop i defined in my `range` function, i incremented `i` by the value of `step` and i modified the end condition to work in cases where `start` is less than `end` and vice versa  using the *ternary operator*. This also came in handy when defining the default value for my `step`. I also modified my `sum` function to return a string telling you to "pass an object type" when it takes anything other than an array or object as argument
+   As a bonus i was tasked to modify the `range` function to take an optional third argument `step`. This `step` would be the incremental value for my range of numbers. If it is not given, the default value would be 1. I was also tasked to make it work for a negative `step` when the start value is greater than the end value. This negative `step` by default would be -1. I started by writing some exceptions, The first for when the `start` value is greater than the `end` value but the step is positive `range(5, 1, 2)`. The second for when the `end` value is greater than the `start` value but the step is negative `range(1, 10 -1)`. In both cases the `range` function returns a string telling you it can't compute. Else it progresses to the function itself. For the `for` loop i defined in the `range` function, i incremented `i` by the value of `step` and i modified the end condition to work in cases where `start` is less than `end` and vice versa  using the *ternary operator*. This also came in handy when defining the default value for `step`. I also modified the `sum` function to return a string telling you to "pass an object type" when it takes anything other than an array or object as argument
    ```javascript
    function range(start, end, step = start < end ? 1 : -1) {
       if(start < end && step < 0) {
@@ -277,7 +277,7 @@ You can use the `instanceOf` operator to check if an object was derived from a s
    ```
 * 4.2 [Reversing An Array](https://github.com/EmmanuelOkorieC/eloquent_js_third_edition-_4-6/blob/main/chapter%204%20exercises/reverseArray.js)
 
-   For this exercise, i had to write two functions `reverseArray` and `reverseArrayInPlace`. They would work like the array method `reverse` that changes my array by inverting the order in which my elements appear. `reverseArray` takes my array as argument and produces a new array that has the same elements in the inverse order. `reverseArrayInPlace` would do the same thing but by modifying the array i passed in as an argument.
+   For this exercise, i had to write two functions `reverseArray` and `reverseArrayInPlace`. They would work like the array method `reverse` that changes an array by inverting the order in which the elements appear. `reverseArray` takes an array as argument and produces a new array that has the same elements in the inverse order. `reverseArrayInPlace` would do the same thing but by modifying the array i pass in as an argument.
    
    In my `reverseArray` function, i defined a binding `newArray` and assigned an empty array object to it then i looped through all elements of the array i passed in as argument, adding each element to the beginning of `newArray` using the array method `unshift`. My loop iterates from the first value, meaning the next value will always be added to the beginning of my array. At the end of the loop, i return `newArray`
    ```javascript
@@ -290,7 +290,7 @@ You can use the `instanceOf` operator to check if an object was derived from a s
     }
     console.log(reverseArray([3, 2, 4, 5])) //outputs [5, 4, 2, 3]
    ```
-   For my `reverseArrayInPlace`, i tried reassigning the index of elements in my array. The first index gets assigned the last element in the array, the second index gets assigned the second to the last and so on  but on first try it did not work
+   For my `reverseArrayInPlace`, i tried reassigning the index of elements in the array. The first index gets assigned the last element in the array, the second index gets assigned the second to the last and so on  but on first try it did not work
    ```javascript
      function reverseArrayInPlace(array) {
         for (let i = 0; i < array.length; i++) {
@@ -300,7 +300,7 @@ You can use the `instanceOf` operator to check if an object was derived from a s
      }
      console.log(reverseArrayInPlace([1, 2, 3, 4])) //outputs [4, 3, 3, 4]
    ```
-   After hours of wondering why it did not work, i finally realized my mistake, the first half of my array's index stored my reasssigned values and subsequent reassigning of the other half of my array was referencing that stored value (0 became 3, 1 became 2, 2 became by my newly assigned 1 and 3 became my newly assigned 0). So i came up with a litte solution. I looped through only the first part of my array by dividing `array.length` by 2 then i reassigned the index of my elements but this time it stopped at the middle. I needed a way to reassign the index of the second half of my array so i defined a binding `beginIndex` that gets assigned each element from the first part of my array everytime it iterates. I needed `beginIndex` so i wouldn't lose my element after reassigning. Then at the end of the loop i reassigned the index of the second part of my array (starting from the end) to `beginIndex`. Phew. I wondered if this would work if length of my array was odd and not even. it did, mainly because elements in the middle remain unchanged
+   After hours of wondering why it did not work, i finally realized my mistake, the first half of the array's index stored the reasssigned values and subsequent reassigning of the other half of the array's index was referencing that stored value (0 became 3, 1 became 2, 2 became by my newly assigned 1 and 3 became my newly assigned 0). So i came up with a litte solution. I looped through only the first part of the array by dividing `array.length` by 2 then i reassigned the index of those elements. I needed a way to reassign the index of the second half of the array so i defined a binding `beginIndex` that gets assigned each element from the first part of the array everytime it iterates. I need `beginIndex` so i wouldn't lose the element after reassigning. Then at the end of the loop i reassigned the index of the second part of the array (starting from the end) as `beginIndex`. Phew. I wondered if this would work if length of the array was odd and not even. it did, mainly because elements in the middle remain unchanged
    ```javascript
    function reverseInPlace(array) {
      for (let i = 0; i < array.length / 2; i++) {
@@ -315,9 +315,9 @@ You can use the `instanceOf` operator to check if an object was derived from a s
    ```
 * 4.3 [A List](https://github.com/EmmanuelOkorieC/eloquent_js_third_edition-_4-6/blob/main/chapter%204%20exercises/list.js)
 
-   For this exercise, i was tasked to write a function `arrayToList` that takes an array as argument and returns a *List*. A *list* is a nested set of objects, with the first holding a reference to the second, the second to the third and so on. After getting this to work, i also have to write a `listToArray` function that produces an array from a list, a `prepend` function that takes an element and a list and returns a new list that adds the element to the input list, and finally a `nth` function that takes a list and number as argument and returns the element at the given position in the list.
+   For this exercise, i was tasked to write a function `arrayToList` that takes an array as argument and returns a *List*. A *list* is a nested set of objects, with the first holding a reference to the second, the second to the third and so on. After getting this to work, i also wrote a `listToArray` function that produces an array from a list. A `prepend` function that takes an element and a list and returns a new list that adds the element to the input list. And finally a `nth` function that takes a list and number as argument and returns the element at the given position in the list.
    
-   My approach to this exercise was recursion recursion recursion. It was all i could think of as a solution to the exercise and i successfully implemented it. My list object is supposed to have a `value` property that indicates the number of the object and a `rest` property that contains subsequent objects with the same properties `{value: 1, rest: {value: 2, rest: null}}`. My `arrayToList` function returns this object with the `value` property being the first element in my array and the `rest` being a recursive call to the `arrayToList` function. That first element in my array is removed from the array using the array method `shift` and stored in a binding `shiftedValue` so that for each recursive call, my array's length is reduced by 1. When my array's length becomes 0, my recursive call breaks and returns `null`.
+   My approach to this exercise was recursion recursion recursion. It was all i could think of as a solution to the exercise and i successfully implemented it. The list object is supposed to have a `value` property that indicates the number of the object and a `rest` property that contains subsequent objects with the same properties `{value: 1, rest: {value: 2, rest: null}}`. My `arrayToList` function returns this object with the `value` property being the first element in the array and the `rest` being a recursive call to the `arrayToList` function. That first element in the array is removed from the array using the array method `shift` and stored in a binding `shiftedValue` so that for each recursive call, the array's length is reduced by 1. When the array's length becomes 0, my recursive call breaks and returns `null`.
    ```javascript
    function arrayToList(array) {
      if(array.length == 0) return null
@@ -325,7 +325,7 @@ You can use the `instanceOf` operator to check if an object was derived from a s
      return {value: shiftedValue, rest: arrayToList(array)}
     }
    ```
-   For my `listToArray` function, i defined a binding `array` assigning an empty array object to it. Then i added my list's current value to that array using the array method `push`. When my list's rest property is `null`, it returns that array else it returns the array  concated to a recursive call of `listToArray` that takes the current list's rest property `list.rest` as argument. This recursive call will keep returning an array for each `rest` object until it hits a break when the `rest` property points to `null`. Then it concats all returned array value.
+   For my `listToArray` function, i defined a binding `array` assigning an empty array object to it. Then i added the list's current value to that array using the array method `push`. When the list's rest property is `null`, it returns that array else it returns the array  concated to a recursive call to `listToArray` that takes the current list's rest property `list.rest` as argument. This recursive call will keep returning an array for each `rest` object until it hits a break when the `rest` property points to `null`. Then it concats all returned array value.
    ```javascript
     function listToArray(list) {
        let array = []
@@ -334,13 +334,13 @@ You can use the `instanceOf` operator to check if an object was derived from a s
        return array.concat(listToArray(list.rest))
    }
    ```
-   The `prepend` function was pretty straight forward. I returned a new list object that had my element as the `value` and the `rest` as the list i passed in.
+   The `prepend` function was pretty straight forward. I returned a new list object that had the element as the value to property `value` and the list as value to property `rest`
    ```javascript
    function prepend(element, list) {
      return {value: element, rest: list}
    }
    ```
-   For my `nth` function, i used my implementation from `listToArray` except instead of returning my concated array, i reassigned it to `array` and returned the value of my element at index `number` of my array. This value returns `undefined` when there is no such element
+   For the `nth` function, i used my implementation from `listToArray` except instead of returning the concated array, i reassigned it to `array` and returned the value of the element at index `number` of the array. This value returns `undefined` when there is no such element
    ```javascript
     function nth(list, number) {
        let array = []
@@ -354,7 +354,7 @@ You can use the `instanceOf` operator to check if an object was derived from a s
 
    For this exercise, i wrote a function `deepEqual` that takes two values and returns true only if they are the same value, or objects with the same properties
    
-   To start with, i compared my values directy using the `===` operator (to avoid *type coercion*). If those values are strings or numbers and they are the same, it returns `true`. Else it progresses to my next `if`. I want to only compare objects this time, so if one of my two arguments is not an object or if it is `null` (`typeof` `null` is also object) then it returns `false`. If this isn't the case, it compares the length of my objects property and if they are not the same, returns `false`. The i looped through the property *names* and *values* of my first object comparing them to my second object's property *names* and *values*. If there is a discrepancy, it returns `false`. At the end, if it doesn't meet any of the conditions then it is Equal and returns `true`.
+   To start with, i compared the values directy using the `===` operator (to avoid *type coercion*). If those values are strings or numbers and they are the same, it returns `true`. Else it progresses to the next `if`. I want to only compare objects this time, so if one of the two arguments is not an object or if it is `null` (`typeof` `null` is also object) then it returns `false`. If this isn't the case, it compares the length of the objects property and if they are not the same, returns `false`. The i looped through the property *names* and *values* of the first object comparing them to the second object's property *names* and *values*. If there is a discrepancy, it returns `false`. At the end, if it doesn't meet any of the conditions then it is Equal and returns `true`.
    ```javascript
     function deepEqual (val1, val2) {
     if(val1 === val2) {
@@ -380,7 +380,7 @@ You can use the `instanceOf` operator to check if an object was derived from a s
     return true
    }
    ```
-   My function did not work for nested objects, mainly because comparing objects will return `false`. So i had to find a way to compare my object values if they were objects. Recursively calling my `deepEqual` function could work so i implemented it. I re-structured my loop to recursively compare values of every property in my two objects and if any of those recursive calls return `false`, i return `false` in my main function
+   My function did not work for nested objects, mainly because comparing objects will return `false`. So i had to find a way to compare the object values if they were objects. Recursively calling my `deepEqual` function could work so i implemented it. I re-structured the loop to recursively compare values of every property in both objects and if any of those recursive calls return `false`, i return `false` in the main function
    ```javascript
    function deepEqual (val1, val2) {
     if(val1 === val2) {
@@ -416,7 +416,7 @@ You can use the `instanceOf` operator to check if an object was derived from a s
    let newArray = array.reduce((a, b) => a.concat(b))
    console.log(newArray)// outputs [1, 2, 3, 1, 4, 4, 5, 6]
    ```
-    My `reduce` method automatically takes the first array in `array` as the start value since i did not indicate one
+    Tje `reduce` method automatically takes the first array in `array` as the start value since i did not indicate one
     
 * 5.2 [Your Own Loop](https://github.com/EmmanuelOkorieC/eloquent_js_third_edition-_4-6/blob/main/chapter%205%20exercises/yourOwnLoop.js)
 
@@ -430,11 +430,11 @@ You can use the `instanceOf` operator to check if an object was derived from a s
    loop(0, n => n < 3, n => n + 1, console.log) //outputs 0 1 2 
    ```
    
-   I stored my value as `val` in my for loop. `test` function takes `val` as argument and checks if my iteration should end. `update` function takes `val` as argument and returns an updated value that i reassign to `val` for my next iteration. `body` function is applied to all values  `val` returns in the loop
+   I stored the value as `val` in my for loop. `test` function takes `val` as argument and checks if the iteration should end. `update` function takes `val` as argument and returns an updated value that i reassign to `val` for the next iteration. `body` function is applied to all values  `val` returns in the loop
    
 * 5.3 [Everything](https://github.com/EmmanuelOkorieC/eloquent_js_third_edition-_4-6/blob/main/chapter%205%20exercises/everything.js)
 
-  The array method `every` works almost like the `some` method except it returns `true` when my test function is `true` for every element in the array. In this exercise, i implemented `every` as a function and wrote two versions of it. one using a loop and one using the `some` method. For the first version i defined my `every` function that takes an array and a test function as arguments. I looped through each element of my array and ran my test function on each of them. If my test function returns `false` for any element in the array, my `every` function returns `false`. If it doesn't, then it simply exits the loop and returns `true`
+  The array method `every` works almost like the `some` method except it returns `true` when my test function is `true` for every element in the array. In this exercise, i implemented `every` as a function and wrote two versions of it. one using a loop and one using the `some` method. For the first version i defined my `every` function that takes an array and a test function as arguments. I looped through each element of the array and ran my test function on them. If the test function returns `false` for any element in the array, my `every` function returns `false`. If it doesn't, then it simply exits the loop and returns `true`
   
   ```javascript
    function every(array, test) {
@@ -444,7 +444,7 @@ You can use the `instanceOf` operator to check if an object was derived from a s
    return true
    }
   ```
-  The `some` method returns `true` if any of the element in my array returns `true` for the function i pass in as argument. So i started by inverting results of my test function so the function i pass into `some` returns `true` when any of the elements of my array fail my test and `false` when all my elements pass the test. Then i inverted the value returned from the method call so it becomes `true` for when all my elements pass the test and `false` when any of them fails
+  The `some` method returns `true` if any of the element in the array returns `true` for the function i pass in as argument. So i started by inverting results of my test function so the function i pass into `some` returns `true` when any of the elements of the array fail my test and `false` when all the elements pass my test. Then i inverted the value returned from the method call so it becomes `true` for when all the elements pass my test and `false` when any of them fails
   ```javascript
      function every2(array, test) {
       return !array.some(val => !test(val))
@@ -452,7 +452,7 @@ You can use the `instanceOf` operator to check if an object was derived from a s
   ```
 * 5.4 [Dominant writing Direction](https://github.com/EmmanuelOkorieC/eloquent_js_third_edition-_4-6/blob/main/chapter%205%20exercises/dominantDirection.js)
 
-  To understand this exercise, you need to take a look at the [data set](https://eloquentjavascript.net/code/scripts.js) the author worked with throughout this chapter. It contains pieces of information about the 140 scripts defined in Unicode (name, the direction in which it is written, Whether it is still in use, Unicode ranges assigned to it and a link to more information). This exercise required me to use helper functions `characterScript` and `countBy` already defined by the author in this chapter to write a function that computes the dominant writing direction in a string of text. `characterScript` takes a character code as argument and returns a corresponding script (if any). `countBy` takes an array and a function (that computes a group name for a given element) as arguments, and returns an array of objects, each of which names a group and tells you the number of elements found in that group. We will use this `countBy` function to count characters with the same direction. I started by doing just that, i passed my text and function to `countBy`. This function takes each character of my text, passes it's character code as argument to `characterScript` and returns the direction property of the script it returns or none if it doesn't find any. Then i filtered the group my `countBy` function returns removing the group with name property of "none" and assigned this result to a binding `script`. Then i proceeded to define three bindings. `directions` is an array of the three main directions defined in the data set. `num` holds `-Infinity` that i use to compare and reassign values and `dominant` is undefined. I looped through `directions` using each element to filter out groups in `script` with the same name and reducing the count property to give me a value. This value returns 0 when there is no matching group in my script. I assigned this value to a binding `total` and for each iteration of `directions` i check if `total` is greater than `num`. If this returns true, i reassign `num` and assign the direction with that bigger value to my `dominant` binding and proceed to the next iteration. After it is done, i return my `dominant` binding
+  To understand this exercise, you need to take a look at the [data set](https://eloquentjavascript.net/code/scripts.js) the author worked with throughout this chapter. It contains pieces of information about the 140 scripts defined in Unicode (name, the direction in which it is written, Whether it is still in use, Unicode ranges assigned to it and a link to more information). This exercise required me to use helper functions `characterScript` and `countBy` already defined by the author in this chapter to write a function that computes the dominant writing direction in a string of text. `characterScript` takes a character code as argument and returns a corresponding script (if any). `countBy` takes an array and a function (that computes a group name for a given element) as arguments, and returns an array of objects, each of which names a group and tells you the number of elements found in that group. We will use this `countBy` function to count characters with the same direction. I started by doing just that, i passed my text and function to `countBy`. This function takes each character of the text, passes it's character code as argument to `characterScript` and returns the direction property of the script it returns or "none" if it doesn't find any. Then i filtered the group my `countBy` function returns removing the group with name property of "none" and assigned this result to a binding `script`. Then i proceeded to define three bindings. `directions` is an array of the three main directions defined in the data set. `num` holds `-Infinity` that i use to compare and reassign values and `dominant` is undefined. I looped through `directions` using each element to filter out groups in `script` with the same name and reducing the count property to give me a value. This value returns 0 when there is no matching group in my script. I assigned this value to a binding `total` and for each iteration of `directions` i check if `total` is greater than `num`. If this returns true, i reassign `num` and assign the direction with that bigger value to the `dominant` binding and proceed to the next iteration. After it is done, i return the `dominant` binding
    ```javascript
     function characterScript(code) {
      for (let script of SCRIPTS) {
