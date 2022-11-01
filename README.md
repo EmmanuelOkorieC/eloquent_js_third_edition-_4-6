@@ -51,7 +51,7 @@ The rest parameter also helps us spread our array into a new array
   console.log(array2) //outputs [2, 4, 1, 2, 3]
 ```
 
-When passing in arrays or objects as arguments to a function. you can *destructure* them to "look inside" of the value. with arrays, you use square brackets. with objects, you use braces. This also works with bindings created with `let`, `var` or `const`
+When passing in arrays or objects as arguments to a function. you can *destructure* them to "look inside" of the value. With arrays, you use square brackets. With objects, you use braces. This also works with bindings created with `let`, `var` or `const`
 ```javascript
 let [a, b, c] = [10, 20, 30]
 let {age} = {name: "sarah", age: 20}
@@ -110,7 +110,7 @@ The array method `reduce` builds a single value by repeatedly taking a single el
   }
   console.log(reduce([1, 2, 3], (a, b) => a + b, 0)) //outputs 6
 ```
-In the `reduce` method, we do not necessarily have to specify a start. If one is not given, our method automatically makes the first element of the array it's start value. `console.log([1, 2, 3].reduce((a, b) => a + b)) //outputs 6`. The `some` method is another higher order function. It takes a test function and tells you if that function returns `true` for any of the elements in the array.
+In the `reduce` method, we do not necessarily have to specify a start. If one is not given, the method automatically makes the first element of the array it's start value. `console.log([1, 2, 3].reduce((a, b) => a + b)) //outputs 6`. The `some` method is another higher order function. It takes a test function and tells you if that function returns `true` for any of the elements in the array.
 ```javascript
    function some(array, funct) {
       for (let element of array) {
@@ -279,7 +279,7 @@ You can use the `instanceOf` operator to check if an object was derived from a s
 
    For this exercise, i had to write two functions `reverseArray` and `reverseArrayInPlace`. They would work like the array method `reverse` that changes an array by inverting the order in which the elements appear. `reverseArray` takes an array as argument and produces a new array that has the same elements in the inverse order. `reverseArrayInPlace` would do the same thing but by modifying the array i pass in as an argument.
    
-   In my `reverseArray` function, i defined a binding `newArray` and assigned an empty array object to it then i looped through all elements of the array i passed in as argument, adding each element to the beginning of `newArray` using the array method `unshift`. My loop iterates from the first value, meaning the next value will always be added to the beginning of my array. At the end of the loop, i return `newArray`
+   In my `reverseArray` function, i defined a binding `newArray` and assigned an empty array object to it then i looped through all elements of the array i passed in as argument, adding each element to the beginning of `newArray` using the array method `unshift`. The loop iterates from the first value, meaning the next value will always be added to the beginning of the array. At the end of the loop, i return `newArray`
    ```javascript
    function reverseArray(array) {
       let newArray = []
@@ -334,7 +334,7 @@ You can use the `instanceOf` operator to check if an object was derived from a s
        return array.concat(listToArray(list.rest))
    }
    ```
-   The `prepend` function was pretty straight forward. I returned a new list object that had the element as the value to property `value` and the list as value to property `rest`
+   The `prepend` function was pretty straight forward. I returned a new list object that had the element as the value to the object's property `value` and the list as value to property `rest`
    ```javascript
    function prepend(element, list) {
      return {value: element, rest: list}
@@ -416,7 +416,7 @@ You can use the `instanceOf` operator to check if an object was derived from a s
    let newArray = array.reduce((a, b) => a.concat(b))
    console.log(newArray)// outputs [1, 2, 3, 1, 4, 4, 5, 6]
    ```
-    Tje `reduce` method automatically takes the first array in `array` as the start value since i did not indicate one
+    The `reduce` method automatically takes the first array in `array` as the start value since i did not indicate one
     
 * 5.2 [Your Own Loop](https://github.com/EmmanuelOkorieC/eloquent_js_third_edition-_4-6/blob/main/chapter%205%20exercises/yourOwnLoop.js)
 
@@ -452,7 +452,7 @@ You can use the `instanceOf` operator to check if an object was derived from a s
   ```
 * 5.4 [Dominant writing Direction](https://github.com/EmmanuelOkorieC/eloquent_js_third_edition-_4-6/blob/main/chapter%205%20exercises/dominantDirection.js)
 
-  To understand this exercise, you need to take a look at the [data set](https://eloquentjavascript.net/code/scripts.js) the author worked with throughout this chapter. It contains pieces of information about the 140 scripts defined in Unicode (name, the direction in which it is written, Whether it is still in use, Unicode ranges assigned to it and a link to more information). This exercise required me to use helper functions `characterScript` and `countBy` already defined by the author in this chapter to write a function that computes the dominant writing direction in a string of text. `characterScript` takes a character code as argument and returns a corresponding script (if any). `countBy` takes an array and a function (that computes a group name for a given element) as arguments, and returns an array of objects, each of which names a group and tells you the number of elements found in that group. We will use this `countBy` function to count characters with the same direction. I started by doing just that, i passed my text and function to `countBy`. This function takes each character of the text, passes it's character code as argument to `characterScript` and returns the direction property of the script it returns or "none" if it doesn't find any. Then i filtered the group my `countBy` function returns removing the group with name property of "none" and assigned this result to a binding `script`. Then i proceeded to define three bindings. `directions` is an array of the three main directions defined in the data set. `num` holds `-Infinity` that i use to compare and reassign values and `dominant` is undefined. I looped through `directions` using each element to filter out groups in `script` with the same name and reducing the count property to give me a value. This value returns 0 when there is no matching group in my script. I assigned this value to a binding `total` and for each iteration of `directions` i check if `total` is greater than `num`. If this returns true, i reassign `num` and assign the direction with that bigger value to the `dominant` binding and proceed to the next iteration. After it is done, i return the `dominant` binding
+  To understand this exercise, you need to take a look at the [data set](https://eloquentjavascript.net/code/scripts.js) the author worked with throughout this chapter. It contains pieces of information about the 140 scripts defined in Unicode (name, the direction in which it is written, Whether it is still in use, Unicode ranges assigned to it and a link to more information). This exercise required me to use helper functions `characterScript` and `countBy` already defined by the author in this chapter to write a function that computes the dominant writing direction in a string of text. `characterScript` takes a character code as argument and returns a corresponding script (if any). `countBy` takes an array and a function (that computes a group name for a given element) as arguments, and returns an array of objects, each of which names a group and tells you the number of elements found in that group. We will use this `countBy` function to count characters with the same direction. I started by doing just that, i passed my text and function to `countBy`. This function takes each character of the text, passes it's character code as argument to `characterScript` and returns the direction property of the script it returns or "none" if it doesn't find any. Then i filtered the group my `countBy` function returns removing the group with name property of "none" and assigned this result to a binding `script`. Then i proceeded to define three bindings. `directions` is an array of the three main directions defined in the data set. `num` holds `-Infinity` that i use to compare and reassign values and `dominant` is undefined. I looped through `directions` using each element to filter out groups in `script` with the same name and reducing the count property to give me a value. This value returns 0 when there is no matching group in `script`. I assigned this value to a binding `total` and for each iteration of `directions` i check if `total` is greater than `num`. If this returns true, i reassign `num` and assign the direction with that bigger value to the `dominant` binding and proceed to the next iteration. After it is done, i return the `dominant` binding
    ```javascript
     function characterScript(code) {
      for (let script of SCRIPTS) {
@@ -531,7 +531,7 @@ You can use the `instanceOf` operator to check if an object was derived from a s
 
    For this exercise, i wrote a class `Group` that models the data structure `Set`. A `Set` holds a collection of values but unlike `Map` does not associate this values with other values. A value can be a part of a set only once (adding it again does not have any effect). This class `Group` much like `Set` would have `add`, `delete` and `has` methods. It's constructor creates an empty group. `add` adds a value to the group but only if it's not a member. `delete` removes a value from the group if it was a member and `has` returns a boolean indicating if the value passed in as argument is a member of the group. This class would also have a static method `from` that takes an iterable object as argument and creates a group that contains all values produced by iterating over it. 
    
-   I started by defining my class and creating an empty group in the  constructor which i assigned to the property `members`. Then i defined my `add` method which uses the array method `includes` to check if the value passed in as argument exists in the group. If it doesn't, it adds the value to my group using the array method `push`. I did something similar for the `delete` and `has` methods. If the group contains the value i pass in as argument to my `delete` method, it filters that value out and reassigns the new array returned by the `filter` method to the `members` property. And if the group contains the value i pass into my `has` method, it returns `true` else it returns `false`. For my static method `from`, i needed a way to add all elements of my iterable object (Could be array, string, Set) to my new group. So i instantiated the class `Group` and assigned it to a binding `group` then i looped through the elements of my iterable object adding each one to my `group` with the `add` method i already defined in the *class*. Then after iterating, i returned `group`
+   I started by defining my class and creating an empty group in the  constructor which i assigned to the property `members`. Then i defined the `add` method which uses the array method `includes` to check if the value passed in as argument exists in the group. If it doesn't, it adds the value to the group using the array method `push`. I did something similar for the `delete` and `has` methods. If the group contains the value i pass in as argument to the `delete` method, it filters that value out and reassigns the new array returned by the `filter` method to the `members` property. And if the group contains the value i pass into the `has` method, it returns `true` else it returns `false`. For the static method `from`, i needed a way to add all elements of my iterable object (Could be array, string, Set) to a new group. So i instantiated the class `Group` and assigned it to a binding `group` then i looped through the elements of the iterable object adding each one to `group` with the `add` method i  defined in the *class*. Then after iterating, i returned `group`
    ```javascript
     class Group {
       constructor() {
@@ -565,13 +565,13 @@ You can use the `instanceOf` operator to check if an object was derived from a s
    
 * 6.3 [Iterable Groups](https://github.com/EmmanuelOkorieC/eloquent_js_third_edition-_4-6/blob/main/chapter%206%20exercises/iterableGroups.js)
 
-   For this exercise, i made the class `Group` i defined in the previous exercise iterable. Could have been pretty straightforward since i used an array to define my group (the `members` property). All i would do is call it's `Symbol.iterator` function in the `Symbol.iterator` i define for my class `Group`.
+   For this exercise, i made the class `Group` i defined in the previous exercise iterable. Could have been pretty straightforward since i used an array to define the group (the `members` property). All i would do is call it's `Symbol.iterator` function in the `Symbol.iterator` i define for my class `Group`.
    ```javascript
      Group.prototype[Symbol.iterator] = function() {
      return this.members[Symbol.iterator]()
   }
    ```
-   But the author advised against that so i had to define my own *iterator* object. I defined it directly in my class's `Symbol.iterator` function at first
+   But the author advised against that so i had to define my own *iterator* object. I defined it directly in the class's `Symbol.iterator` function at first
    ```javascript
    Group.prototype[Symbol.iterator] = function() {
    let x = -1
@@ -585,7 +585,7 @@ You can use the `instanceOf` operator to check if an object was derived from a s
       }
    }
    ```
-   This *iterator* object i return has a `next` method. This `next` method uses an arrow function because i want it to reference the `this` property of the group. If i had used a normal function to define `next`, it would not have worked as it would have referenced the iterator object itself. In my `next` method i use the local binding `x` i defined in my function to define the object it returns. `x` references my group's array index. For every call to `next`, i add 1 so `x` starts from 0 when i check my conditions. Because of `zero-based-counting`, once `x` equals the length of my group array, it means we are done iterating and my `next` method returns an object with a `done` property of `true` else it returns an object with a `value` property referencing the current element of the group at index `x` and a `done` property of `false`. After getting this to work, i decided to define my *iterator* object as a class and instantiate it in my class's `Symbol.iterator`
+   This *iterator* object i return has a `next` method. This `next` method uses an arrow function because i want it to reference the `this` property of the group. If i had used a normal function to define `next`, it would not have worked as it would have referenced the iterator object itself. In the `next` method, i use the local binding `x` i defined in the `Symbol.iterator` function to define the object it returns. `x` references the group's array index. For every call to `next`, i add 1 so `x` starts from 0 when i check my conditions. Because of `zero-based-counting`, once `x` equals the length of the group array, it means we are done iterating and the `next` method returns an object with a `done` property of `true` else it returns an object with a `value` property referencing the current element of the group at index `x` and a `done` property of `false`. After getting this to work, i decided to define my *iterator* object as a class and instantiate it in the class's `Symbol.iterator`
    ```javascript
     class GroupIterator {
       constructor(group) {
