@@ -254,7 +254,7 @@ You can use the `instanceOf` operator to check if an object was derived from a s
    Then i looped through all elements of the array i passed in as  argument, adding each element to `count` everytime it iterates and reassigning it to the binding `count`. Then after the loop, i returned `count` which at that point would hold the sum of all elements in the array.
    
    As a bonus i was tasked to modify the `range` function to take an optional third argument `step`. This `step` would be the incremental value for my range of numbers. If it is not given, the default value would be 1. I was also tasked to make it work for a negative `step` when the start value is greater than the end value. This negative `step` by default would be -1. I started by writing some exceptions, The first for when the `start` value is greater than the `end` value but the step is positive i.e `range(5, 1, 2)`. The second for when the `end` value is greater than the `start` value but the step is negative i.e `range(1, 10 -1)`. In both cases the `range` function returns a string telling you it can't compute. Else it progresses to the function itself. 
-     ```javascript
+   ```javascript
    function range(start, end, step = start < end ? 1 : -1) {
       if(start < end && step < 0) {
          return "last parameter must be positive"
